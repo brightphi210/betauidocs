@@ -6,8 +6,13 @@
 
 /* You can override the default Infima variables here. */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
 
 
 :root {
@@ -20,9 +25,10 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -31,7 +37,7 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
 }
 
@@ -40,8 +46,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Sora", serif;
-  font-family: "Kanit", serif;
   font-size: 15px;
   font-weight: 500;
 }
@@ -53,26 +57,31 @@ html[data-theme='dark'] .navbar {
 
 
 html[data-theme='dark'] .main-wrapper {
-  background-color: #000000; /* Pure black for the content wrapper */
+  background-color: #000000;
 }
 
 
 h1{
-  font-size: 30px;
+  font-size: 40px !important;
+  font-family: "Kanit", serif;
+
 }
 
 h2{
-  font-size: 22px;
+  font-size: 22px !important;
+  font-family: "Kanit", serif;
+
 }
 
 
-
 p{
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 300;
   width: 80%;
   text-align: justify;
   line-height: 25px;
+  font-family: "Kanit", serif;
+
 }
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
@@ -82,22 +91,54 @@ p{
 }
 
 
-/* Target the pre block for background color */
+html[data-theme='dark'] {
+  --code-text-color: #ffffff;
+  --code-block-background: #1b1b1d;
+  --code-block-border: solid 1px rgb(35, 44, 40);
+}
+
+
 pre {
-  background-color: #000000; /* Replace with your desired background color */
-  font-size: 16px; /* Adjust the font size */
-  border-radius: 8px; /* Add rounded corners (optional) */
-  padding: 16px; /* Add some padding */
+  border-radius: 8px;
+  padding: 16px;
+  border: var(--code-block-border);
+  font-family: "IBM Plex Mono", serif;
+  background-color: var(--code-block-background) !important;
 }
 
-/* Target the code block specifically */
+
 pre code {
-  font-family: 'Fira Code', monospace; /* Use a monospaced font */
-  color: #ffffff; /* Text color */
+  font-family: "IBM Plex Mono", serif;
 }
 
-/* Add custom styles for bash blocks if needed */
-pre[class*="language-bash"] {
-  background-color: #000000; /* Darker background for bash */
-  color: #00ff00; /* Example: Green text for bash */
+
+.myBtn{
+  border-radius: 100px !important;
+  background-color: #fb923c !important;
+  color: white !important;
+}
+
+.myBtn:hover{
+  background-color: #f97316 !important;
+  color: white !important;
+}
+
+
+.myBtn2{
+  border-radius: 5px !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+.myBtn3{
+  border-radius: 5px !important;
+  background-color: rgb(194, 194, 194) !important;
+  color: black !important;
+  cursor: not-allowed !important;
+}
+
+.myBtn4{
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
 }

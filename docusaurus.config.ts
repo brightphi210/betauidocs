@@ -1,6 +1,7 @@
 import {themes as prismThemes, themes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+// import tailwindPlugin from "./plugins/tailwind-config.cjs"
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -71,7 +72,7 @@ const config: Config = {
       title: 'BetaUI',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/picture.png',
+        src: 'img/Beta.png',
         style: {
           width: '20px',
           height: '20px',
