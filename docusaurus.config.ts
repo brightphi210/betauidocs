@@ -74,8 +74,8 @@ const config: Config = {
         alt: 'My Site Logo',
         src: 'img/Beta.png',
         style: {
-          width: '20px',
-          height: '20px',
+          width: '15px',
+          height: '15px',
           marginTop : 5
         }
       },
@@ -88,8 +88,9 @@ const config: Config = {
         },
         {
           href: 'https://github.com/brightphi210/brightui',
-          label: 'GitHub',
+          label: 'Github',
           position: 'right',
+          
         },
       ],
     },
