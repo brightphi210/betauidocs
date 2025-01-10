@@ -27,11 +27,11 @@ import { Button } from '@brightcodeui/beta-ui';
 <Button color="red" size="md">Red</Button>
 <Button color="success" size="lg">Green</Button>
 ```
-
-<Button color="blue" size="sm" fontWeight="semibold">Blue Button</Button>
-<Button color="green" size="lg" fontWeight="semibold">Green Button</Button>
-<Button color="yellow" size="md" fontWeight="semibold">Red Button</Button>
-
+<div className="myDiv">
+    <Button color="blue" size="sm" fontWeight="semibold">Blue Button</Button>
+    <Button color="green" size="lg" fontWeight="semibold">Green Button</Button>
+    <Button color="yellow" size="md" fontWeight="semibold">Red Button</Button>
+</div>
 
 ### Sizes
 
@@ -54,7 +54,7 @@ Example:
 You can add custom Tailwind CSS classes to further customize your button:
 
 ```jsx
-<Button size="sm" className="rounded-full bg-gray-400 hover:bg-gray-500 text-white">
+<Button size="sm" className="rounded-md bg-orange-400 hover:bg-orange-500 text-white">
   Custom Orange
 </Button>
 
@@ -63,8 +63,10 @@ You can add custom Tailwind CSS classes to further customize your button:
 </Button>
 ```
 
-<Button size="md" className="myBtn" fontWeight="semibold">Custom Orange</Button>
-<Button size="sm" className="myBtn2" fontWeight="semibold">Custom white</Button>
+<div className="myDiv">
+    <Button size="md" className="myBtn" fontWeight="semibold">Custom Orange</Button>
+    <Button size="sm" className="myBtn2" fontWeight="semibold">Custom white</Button>
+</div>
 
 
 ### Disabled State

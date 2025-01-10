@@ -113,7 +113,7 @@ pre code {
 
 
 .myBtn{
-  border-radius: 100px !important;
+  border-radius: 5px !important;
   background-color: #fb923c !important;
   color: white !important;
 }
@@ -143,3 +143,8 @@ pre code {
   gap: 5px !important;
 }
 
+.myDiv{
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
