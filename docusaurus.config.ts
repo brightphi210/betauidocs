@@ -77,7 +77,9 @@ const config: Config = {
           width: '15px',
           height: '15px',
           marginTop : 5
-        }
+        },
+        
+        href: 'https://betaui.vercel.app/',
       },
       items: [
         {
