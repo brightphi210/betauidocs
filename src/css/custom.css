@@ -85,11 +85,7 @@ p{
 
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  p{
-    width: 100%;
-  }
-}
+
 
 
 html[data-theme='dark'] {
@@ -148,4 +144,53 @@ pre code {
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
+}
+
+
+.headerMine{
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  justify-items: center !important;
+  justify-content: center !important;
+  height: 80vh !important;
+}
+
+.headerMine .button {
+  border-radius: 5px !important;
+  background-color: #025744 !important;
+  color: white !important;
+  padding: 15px 20px !important;
+  text-decoration: none !important;
+  margin: 0 5px !important;
+  border: none !important;
+  font-size: 15px !important;
+}
+
+.headerMine .buttona {
+  border-radius: 5px !important;
+  border: solid 1px #1a8870 !important;
+  background-color: #01130f !important;
+  color: white !important;
+  padding: 15px 20px !important;
+  text-decoration: none !important;
+  margin: 0 5px !important;
+  font-size: 15px !important;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  p{
+    width: 100%;
+  }
+
+  .headerMine{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .headerMine .button {
+    width: 80% !important;
+  }
 }

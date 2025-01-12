@@ -11,7 +11,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://betaui.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -31,6 +31,22 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: 'https://betaui.vercel.app/', // Redirect to the external URL
+            from: ['/', '/home'], // Redirect from the base URL or other paths
+          },
+        ],
+      },
+    ],
+  ],
+
 
   presets: [
     [
@@ -96,6 +112,8 @@ const config: Config = {
         },
       ],
     },
+
+    
 
     prism: {
       theme: prismThemes.github,

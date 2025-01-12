@@ -7,37 +7,42 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
+
+// src/pages/index.js
+import React, { useEffect } from 'react';
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/Beginning/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
+    <div className='headerMine'>
+      <Link
+        className="buttona button--secondary button--lg"
+        to="https://betaui.vercel.app/">
+        Beta UI Website
+      </Link>
+
+      <Link
+        className="button button--secondary button--lg"
+        to="/docs/Beginning/intro">
+        Beta UI Docs - 5min ⏱️
+      </Link>
+  </div>
   );
 }
 
 export default function Home(): ReactNode {
+
+  // useEffect(() => {
+  //   window.location.href = 'https://betaui.vercel.app/';
+  // }, []);
+
   const {siteConfig} = useDocusaurusContext();
+  
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }
