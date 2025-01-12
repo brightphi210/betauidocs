@@ -180,6 +180,25 @@ pre code {
 }
 
 
+.myAlert{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.myAlerta{
+  margin-bottom: 40px;
+}
+
+.myModal{
+  color: #000000 !important;
+  font-size: 20px;
+  height: 300px;
+  width: 40% !important;
+}
+
+
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   p{
     width: 100%;
@@ -198,16 +217,9 @@ pre code {
   .headerMine .buttona {
     width: 80% !important;
   }
-}
 
-
-.myAlert{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.myAlerta{
-  margin-bottom: 40px;
+  .myModal{
+    height: 200px;
+    width: 100% !important;
+  }
 }
