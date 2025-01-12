@@ -199,3 +199,15 @@ pre code {
     width: 80% !important;
   }
 }
+
+
+.myAlert{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.myAlerta{
+  margin-bottom: 40px;
+}
