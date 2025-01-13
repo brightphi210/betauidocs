@@ -90,16 +90,38 @@ import {Input, Button} from '@brightcodeui/beta-ui';
 
 ### Using Ref
 
+import React, { useState, useRef } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
-<Input
-    label="Focus Me"
-    id="focusMe"
-    name="focusMe"
-    type="text"
-/>
-<div className="myAlerta">
-    <Button size="md" color="blue" className="mb-20" fontWeight="bold" >Focus Input</Button>
-</div>
+<BrowserOnly>
+  {() => {
+    const App = () => {
+      const inputRef = useRef(null);
+
+      const focusInput = () => {
+        inputRef.current.focus();
+      };
+
+      return (
+        <>
+          <Input
+            ref={inputRef}
+            label="Focus Me"
+            id="focusMe"
+            name="focusMe"
+            type="text"
+            placeholder="placeholder"
+          />
+          <div className="myAlerta">
+            <Button size="md" color="blue" className="mb-20" fontWeight="bold" onClick={focusInput}>Focus Input</Button>
+          </div>
+        </>
+      );
+    };
+
+    return <App />;
+  }}
+</BrowserOnly>
 
 
 ```jsx
@@ -121,7 +143,7 @@ function MyForm() {
         name="focusMe"
         type="text"
       />
-      <button onClick={focusInput}>Focus Input</button>
+      <Button size="md" color="blue" className="mb-20" fontWeight="bold" >Focus Input</Button>
     </>
   );
 }
@@ -156,32 +178,66 @@ The `Input` component comes with default styling using Tailwind CSS classes. You
 ### Login Form
 
 
-<Input
-    label="Username"
-    id="username"
-    name="username"
-    type="text"
-    required
-    placeholder="Enter your username"
 
-/>
-<Input
-    label="Password"
-    id="password"
-    name="password"
-    type="password"
-    required
-    placeholder="Enter your password"
 
-/>
+<BrowserOnly>
+  {() => {
+    const App = () => {
+      const [formData, setFormData] = useState({ username: '', password: '' });
+      const [errors, setErrors] = useState({});
 
-<div className="myAlerta">
-    <Button size="sm" color="blue" className="mb-20" fontWeight="bold" >Log In</Button>
-</div>
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        // Add your form validation and submission logic here
+      };
+
+      return (
+        <form className="myForm" onSubmit={handleSubmit}>
+
+          <h2 className="myH2">Login Form Sample</h2>
+          <Input
+            label="Username"
+            id="username"
+            name="username"
+            type="text"
+            value={formData.username}
+            onChange={handleChange}
+            error={errors.username}
+            placeholder="Enter your username"
+            required
+            className="myInputs"
+          />
+          <Input
+            label="Password"
+            id="password"
+            name="password"
+            type="password"
+            value={formData.password}
+            onChange={handleChange}
+            error={errors.password}
+            placeholder="Enter your password"
+            required
+            className="myInputs"
+          />
+          <div className="myAlert">
+            <Button size="sm" color="blue" className="mb-20" fontWeight="bold" >Submit</Button>
+          </div>
+        </form>
+      );
+    };
+
+    return <App />;
+  }}
+</BrowserOnly>
+
 
 ```jsx
 import { useState } from 'react';
-import Input from '@/components/Input';
+import { Input } from '@brightcodeui/beta-ui';
 
 function LoginForm() {
   const [formData, setFormData] = useState({ username: '', password: '' });
@@ -218,7 +274,8 @@ function LoginForm() {
         error={errors.password}
         required
       />
-      <button type="submit">Log In</button>
+
+      <Button size="sm" color="blue" className="mb-20" fontWeight="bold" >Submit</Button>
     </form>
   );
 }

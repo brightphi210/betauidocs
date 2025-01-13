@@ -195,7 +195,27 @@ pre code {
   color: #000000 !important;
   font-size: 20px;
   height: 300px;
-  width: 40% !important;
+  width: 100% !important;
+}
+
+.myForm{
+  background-color: white !important;
+  color: #000000 !important;
+  padding: 20px !important;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  width: 70% !important;
+}
+
+.myH2{
+  font-size: 25px !important;
+  padding: 20px 0 !important;
+}
+
+.myInputs{
+  padding: 10px !important;
+  background-color: white !important;
+  color: #000;
 }
 
 
@@ -220,6 +240,10 @@ pre code {
 
   .myModal{
     height: 200px;
+    max-width: 100% !important;
+  }
+
+  .myForm{
     width: 100% !important;
   }
 }

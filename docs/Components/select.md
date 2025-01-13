@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Select
@@ -37,7 +37,44 @@ The `Select` component accepts the following props:
 
 Here's a basic example of how to use the `Select` component:
 
+
+import React, { useState } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Select } from '@brightcodeui/beta-ui';
+
+<BrowserOnly>
+  {() => {
+    const App = () => {
+      const options = [
+        { value: 'option1', label: 'Option 1' },
+        { value: 'option2', label: 'Option 2' },
+        { value: 'option3', label: 'Option 3' },
+      ];
+
+      const [selectedValue, setSelectedValue] = useState('');
+
+      const handleChange = (value) => {
+        setSelectedValue(value);
+        console.log('Selected value:', value);
+      };
+
+      return (
+        <div>
+          <Select
+            options={options}
+            value={selectedValue}
+            onChange={handleChange}
+            placeholder="Choose an option"
+          />
+        </div>
+      );
+    };
+
+    return <App />;
+  }}
+</BrowserOnly>
+
+
 
 
 

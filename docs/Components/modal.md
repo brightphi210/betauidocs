@@ -1,10 +1,8 @@
 ---
-title: Modal Component Documentation
-sidebar_label: Modal
-description: Documentation for the Modal component built with React, Framer Motion, and React Icons.
+sidebar_position: 4
 ---
 
-# Modal Component
+# Modal
 
 The `Modal` component is a reusable, accessible, and animated modal dialog for React applications. 
 It leverages libraries like [Framer Motion](https://www.framer.com/motion/) for animations and 
@@ -57,7 +55,7 @@ import { Modal, Button } from '@brightcodeui/beta-ui';
       return (
         <div >
             <div className="myAlerta">
-                <Button color="green" onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+                <Button color="green" fontWeight="sm" size="sm" onClick={() => setIsModalOpen(true)}>Open Modal</Button>
             </div>
 
             <div className="">
