@@ -75,9 +75,9 @@ import {Swiper} from '@brightcodeui/beta-ui';
     import {Swiper} from '@brightcodeui/beta-ui';
 
     const DemoSlide = ({ color, text }) => (
-    <div className={`w-full h-64 flex items-center justify-center text-white text-2xl font-bold ${color}`}>
-        {text}
-    </div>
+        <div className={`w-full h-64 flex items-center justify-center text-white text-2xl font-bold ${color}`}>
+            {text}
+        </div>
     );
 
     const slides = [
