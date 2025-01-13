@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Select
@@ -37,7 +37,7 @@ The `Select` component accepts the following props:
 
 Here's a basic example of how to use the `Select` component:
 
-
+```jsx
 import React, { useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Select } from '@brightcodeui/beta-ui';
@@ -73,7 +73,7 @@ import { Select } from '@brightcodeui/beta-ui';
     return <App />;
   }}
 </BrowserOnly>
-
+```
 
 
 
