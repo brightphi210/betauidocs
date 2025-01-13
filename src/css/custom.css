@@ -195,7 +195,6 @@ pre code {
   color: #000000 !important;
   font-size: 20px;
   height: 300px;
-  width: 100% !important;
 }
 
 .myForm{
@@ -218,6 +217,35 @@ pre code {
   color: #000;
 }
 
+
+.mySelect{
+  z-index: 1000 !important;
+  margin-bottom: 40px !important;
+  position: relative; 
+}
+
+.mySelecta{
+  font-size: 35px !important;
+}
+
+
+.myLoader{
+  display: flex !important;
+  align-items: center !important;
+  margin: 40px 0;
+  gap: 50px;
+}
+
+.myCard{
+  margin-bottom: 40px;
+  color: #000 !important;
+}
+
+
+.myAccordin{
+  background-color: white !important;
+  color: #000 !important;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
   p{

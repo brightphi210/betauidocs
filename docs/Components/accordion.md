@@ -12,6 +12,9 @@ The `Accordion` component is a versatile UI element used to display collapsible 
 
 ## Importing the Component
 
+import {Accordion} from '@brightcodeui/beta-ui';
+
+
 ```tsx
 import {Accordion} from '@brightcodeui/beta-ui';
 ```
@@ -30,6 +33,15 @@ import {Accordion} from '@brightcodeui/beta-ui';
 ### Default Accordion
 
 A simple accordion with an arrow icon.
+
+    <div className="myCard">
+        <Accordion 
+            title="Accordion Title" 
+            content="This is the content of the accordion." 
+            type="arrow" 
+            className="myAccordin"
+        />
+    </div>
 
 ```tsx
 <Accordion 
@@ -80,6 +92,28 @@ An accordion designed to handle long content gracefully.
 ### Multiple Accordions
 
 Displaying multiple accordions in a stack with spacing.
+
+    <div className="space-y-4 myCard" >
+    <Accordion 
+        title="First Accordion" 
+        content="Content of the first accordion" 
+        type="arrow" 
+        className="myAccordin"
+    />
+    <Accordion 
+        title="Second Accordion" 
+        content="Content of the second accordion" 
+        type="plus" 
+        className="myAccordin"
+    />
+    <Accordion 
+        title="Third Accordion" 
+        content="Content of the third accordion" 
+        type="arrow" 
+        className="myAccordin"
+    />
+    </div>
+
 
 ```tsx
 <div className="space-y-4">

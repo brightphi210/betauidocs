@@ -33,26 +33,31 @@ The Loading component accepts the following props:
 
 Here are some examples of how to use the Loading component:
 
+import {Loading} from '@brightcodeui/beta-ui';
+
+
+<div className="myLoader">
+    <Loading type="spinner" size="lg"  color="text-green-500"/>
+    <Loading type="dots" size="lg"  color="bg-green-500 "/>
+    <Loading type="pulse" size="lg" color="bg-purple-500" />
+    <Loading type="ring" size="lg"  />
+</div>
+
 ```jsx
 import {Loading} from '@brightcodeui/beta-ui';
 
-// Basic usage with default props
-<Loading type="spinner" />
 
 // Customized spinner
-<Loading type="spinner" size="lg" color="text-red-500" />
+<Loading type="spinner" size="lg"  />
 
 // Dots loader
-<Loading type="dots" size="sm" color="text-green-500" />
-
-// Bar loader
-<Loading type="bar" size="md" color="text-yellow-500" />
+<Loading type="dots" size="sm" color="bg-green-500" />
 
 // Pulse loader
-<Loading type="pulse" size="lg" color="text-purple-500" />
+<Loading type="pulse" size="lg" color="bg-purple-500" />
 
 // Ring loader
-<Loading type="ring" size="md" color="text-gray-500" />
+<Loading type="ring" size="md" />
 ```
 
 ## Loader Types

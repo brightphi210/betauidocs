@@ -37,7 +37,6 @@ The `Select` component accepts the following props:
 
 Here's a basic example of how to use the `Select` component:
 
-```jsx
 import React, { useState } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import { Select } from '@brightcodeui/beta-ui';
@@ -59,12 +58,13 @@ import { Select } from '@brightcodeui/beta-ui';
       };
 
       return (
-        <div>
+        <div className="mySelect">
           <Select
             options={options}
             value={selectedValue}
             onChange={handleChange}
             placeholder="Choose an option"
+            className="mySelecta"
           />
         </div>
       );
@@ -73,7 +73,6 @@ import { Select } from '@brightcodeui/beta-ui';
     return <App />;
   }}
 </BrowserOnly>
-```
 
 
 

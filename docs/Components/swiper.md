@@ -26,33 +26,82 @@ The `Swiper` component is a customizable and responsive carousel that supports a
 
 The default Swiper with navigation, pagination, and no autoplay.
 
-```jsx
-import React from 'react';
+
+import React, { useState, useRef } from 'react';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import {Swiper} from '@brightcodeui/beta-ui';
 
-const DemoSlide = ({ color, text }) => (
-  <div className={`w-full h-64 flex items-center justify-center text-white text-2xl font-bold ${color}`}>
-    {text}
-  </div>
-);
+<BrowserOnly>
+  {() => {
+    const App = () => {
 
-const slides = [
-  <DemoSlide key={1} color="bg-blue-500" text="Slide 1" />,
-  <DemoSlide key={2} color="bg-green-500" text="Slide 2" />,
-  <DemoSlide key={3} color="bg-red-500" text="Slide 3" />,
-  <DemoSlide key={4} color="bg-yellow-500" text="Slide 4" />,
-];
+       const DemoSlide = ({ color, text }) => (
+            <div className={`w-full h-64 flex items-center justify-center text-white text-2xl font-bold ${color}`}>
+                {text}
+            </div>
+        );
 
-export default function DefaultSwiper() {
-  return (
-    <Swiper
-      slides={slides}
-      autoplay={false}
-      showNavigation={true}
-      showPagination={true}
-    />
-  );
-}
+        const slides = [
+            <DemoSlide key={1} color="bg-blue-500" text="Slide 1" />,
+            <DemoSlide key={2} color="bg-green-500" text="Slide 2" />,
+            <DemoSlide key={3} color="bg-red-500" text="Slide 3" />,
+            <DemoSlide key={4} color="bg-yellow-500" text="Slide 4" />,
+            <DemoSlide key={5} color="bg-purple-500" text="Slide 5" />,
+            <DemoSlide key={6} color="bg-neutral-500" text="Slide 6" />,
+            <DemoSlide key={7} color="bg-pink-500" text="Slide 7" />,
+            <DemoSlide key={8} color="bg-indigo-500" text="Slide 8" />,
+            <DemoSlide key={8} color="bg-orange-500" text="Slide 9" />,
+        ];
+
+      return (
+        <div className="mySelect">
+            <Swiper
+                slides={slides}
+                autoplay={false}
+                showNavigation={true}
+                showPagination={true}
+            />
+        </div>
+      );
+    };
+
+    return <App />;
+  }}
+</BrowserOnly>
+
+
+```jsx
+    import React from 'react';
+    import {Swiper} from '@brightcodeui/beta-ui';
+
+    const DemoSlide = ({ color, text }) => (
+    <div className={`w-full h-64 flex items-center justify-center text-white text-2xl font-bold ${color}`}>
+        {text}
+    </div>
+    );
+
+    const slides = [
+        <DemoSlide key={1} color="bg-blue-500" text="Slide 1" />,
+        <DemoSlide key={2} color="bg-green-500" text="Slide 2" />,
+        <DemoSlide key={3} color="bg-red-500" text="Slide 3" />,
+        <DemoSlide key={4} color="bg-yellow-500" text="Slide 4" />,
+        <DemoSlide key={5} color="bg-purple-500" text="Slide 5" />,
+        <DemoSlide key={6} color="bg-neutral-500" text="Slide 6" />,
+        <DemoSlide key={7} color="bg-pink-500" text="Slide 7" />,
+        <DemoSlide key={8} color="bg-indigo-500" text="Slide 8" />,
+        <DemoSlide key={8} color="bg-gray-400" text="Slide 9" />
+    ];
+
+    export default function DefaultSwiper() {
+        return (
+            <Swiper
+            slides={slides}
+            autoplay={false}
+            showNavigation={true}
+            showPagination={true}
+            />
+        );
+    }
 
 ```
 

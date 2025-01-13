@@ -9,6 +9,20 @@ The `Card` component is a versatile UI element designed to display content in a 
 
 ## Default Card
 
+import {Card} from '@brightcodeui/beta-ui';
+
+
+<Card 
+  imageSrc="https://placehold.co/600x400" 
+  title="Product Name" 
+  description="This is a sample product description." 
+  price="$99.99" 
+  buttonText="Add to Cart" 
+  onButtonClick={() => console.log('Button clicked!')} 
+  className="myCard"
+/>
+
+
 ```jsx
 import {Card} from '@brightcodeui/beta-ui';
 
@@ -51,6 +65,17 @@ import {Card} from '@brightcodeui/beta-ui';
 This example showcases how to provide custom content using the `children` prop. The `className` prop allows you to apply additional styling.
 
 ## Without Image Example
+
+
+<Card 
+  title="No Image Card"
+  description="This card has no image but still retains its structure."
+  buttonText="Learn More"
+  onButtonClick={() => alert('Button clicked!')} 
+  className="myCard"
+/>
+
+
 
 ```tsx
 <Card 
