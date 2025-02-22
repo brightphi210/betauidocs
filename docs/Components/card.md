@@ -13,7 +13,7 @@ import {Card} from '@brightcodeui/beta-ui';
 
 
 <Card 
-  imageSrc="https://placehold.co/600x400" 
+  imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740229906/photo-1606107557195-0e29a4b5b4aa_n5seeb.webp" 
   title="Product Name" 
   description="This is a sample product description." 
   price="$99.99" 

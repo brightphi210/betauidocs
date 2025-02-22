@@ -1,10 +1,7 @@
 ---
-title: WalletConnection
-sidebar_label: WalletConnection
+sidebar_position: 4
+sidebar_label: Wallet Connection
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 ## WalletConnection
 
@@ -15,14 +12,23 @@ The `WalletConnection` component provides a modal for users to connect their cry
 Ensure you have the necessary dependencies installed:
 
 ```bash
-npm install framer-motion lucide-react
+  npm i @brightcodeui/beta-ui
 ```
 
 ### Usage
 
 #### Basic Example
 
-```tsx
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {WalletConnection, Button} from  "@brightcodeui/beta-ui";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { useState } from "react";
+
+
+<Tabs>
+  <TabItem value="code" label="Code" default>
+ ```tsx
 import React, { useState } from "react";
 import {WalletConnection} from  "@brightcodeui/beta-ui";
 
@@ -40,12 +46,7 @@ const App = () => {
 
   return (
     <div className="p-8">
-      <button
-        onClick={() => setIsOpen(true)}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-      >
-        Open Wallet Modal
-      </button>
+      <Button onClick={() => setIsOpen(true)} color="blue" fontWeight="bold"  size="sm">Open Wallet Modal</Button>
       <WalletConnection
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
@@ -59,6 +60,33 @@ const App = () => {
 
 export default App;
 ```
+  </TabItem>
+  <TabItem value="ui" label="Example">
+    <BrowserOnly>
+      {() => {
+        const App = () => {
+          const [isOpen, setIsOpen] = useState(false);
+          
+          return (
+            <div >
+              <Button onClick={() => setIsOpen(true)} color="green" fontWeight="bold"  size="sm">Open Wallet Modal</Button>
+                <WalletConnection
+                  isOpen={isOpen}
+                  onClose={() => setIsOpen(false)}
+                  onConnect={""}
+                  onDisconnect={""}
+                  theme="light"
+                />
+            </div>
+          );
+        };
+
+        return <App />;
+      }}
+    </BrowserOnly>
+  </TabItem>
+</Tabs>
+
 
 ### Props
 

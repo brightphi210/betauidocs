@@ -1,7 +1,6 @@
 ---
-title: SuccessfulTransactionModal
-sidebar_label: SuccessfulTransactionModal
-description: A modal component for displaying successful transaction messages.
+sidebar_position: 2
+sidebar_label: Successful Transaction Modal
 ---
 
 ## Overview
@@ -9,13 +8,85 @@ description: A modal component for displaying successful transaction messages.
 The `SuccessfulTransactionModal` component provides a visually appealing modal for displaying successful transaction messages. It supports both light and dark themes and includes an animated appearance using Framer Motion.
 
 ## Installation
+ 
 
-Ensure you have the required dependencies installed:
 
-```sh
-npm install framer-motion lucide-react
-
+```bash
+  npm i @brightcodeui/beta-ui
 ```
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { useState } from "react";
+import {SuccessfulTransactionModal, Button} from "@brightcodeui/beta-ui";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+
+<Tabs>
+  <TabItem value="code" label="Code" default>
+    ```tsx
+    import React, { useState } from "react";
+    import {SuccessfulTransactionModal} from "@brightcodeui/beta-ui";
+
+    const App = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      const transactionHash = "0x1234567890abcdef";
+
+      const handleTransaction = () => {
+        setIsOpen(true);
+        // Simulate transaction success
+        setTimeout(() => {
+          setIsOpen(false);
+        }, 2000);
+      };
+
+      return (
+        <div>
+          <SuccessfulTransactionModal
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            transactionHash={transactionHash}
+            theme="dark"
+          />
+        </div>
+      );
+    };
+
+    export default App;
+    ```
+  </TabItem>
+  <TabItem value="ui" label="Example">
+    <BrowserOnly>
+      {() => {
+        const App = () => {
+          const [isOpen, setIsOpen] = useState(false);
+          const transactionHash = "0x1234567890abcdef";
+
+
+          const handleOpen = () => {
+            setIsOpen(true);
+          };
+
+
+          return (
+            <div >
+              <Button onClick={handleOpen} color="green" fontWeight="bold"  size="sm">View Success Modal</Button>
+              <SuccessfulTransactionModal
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                transactionHash={transactionHash}
+                theme="dark"
+              />
+            </div>
+          );
+        };
+
+        return <App />;
+      }}
+    </BrowserOnly>
+  </TabItem>
+</Tabs>
 
 ## Props
 
@@ -28,39 +99,6 @@ npm install framer-motion lucide-react
 
 ## Usage
 
-Import and use the component in your React app:
-
-```tsx
-import React, { useState } from "react";
-import {SuccessfulTransactionModal} from "@brightcodeui/beta-ui";
-
-const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const transactionHash = "0x1234567890abcdef";#
-
-  const handleTransaction = () => {
-    setIsOpen(true);
-    // Simulate transaction success
-    setTimeout(() => {
-      setIsOpen(false);
-    }, 2000);
-  };
-  }
-
-  return (
-    <div>
-      <SuccessfulTransactionModal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        transactionHash={transactionHash}
-        theme="dark"
-      />
-    </div>
-  );
-};
-
-export default App;
-```
 
 ## Theming
 
