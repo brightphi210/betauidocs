@@ -12,28 +12,52 @@ The `Card` component is a versatile UI element designed to display content in a 
 import {Card} from '@brightcodeui/beta-ui';
 
 
-<Card 
-  imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740229906/photo-1606107557195-0e29a4b5b4aa_n5seeb.webp" 
-  title="Product Name" 
-  description="This is a sample product description." 
-  price="$99.99" 
-  buttonText="Add to Cart" 
-  onButtonClick={() => console.log('Button clicked!')} 
-  className="myCard"
-/>
+<div className="myDivCard">
+  <Card 
+    imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740229906/photo-1606107557195-0e29a4b5b4aa_n5seeb.webp" 
+    title="Product Name" 
+    description="This is a sample product description." 
+    price="$99.99" 
+    buttonText="Add to Cart" 
+    onButtonClick={() => console.log('Button clicked!')} 
+    className="myCard"
+  />
+
+  <Card 
+    imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740934087/photo-1494232410401-ad00d5433cfa_w9w2cg.webp" 
+    title="Product Name" 
+    description="This is a sample product description." 
+    price="$99.99" 
+    buttonText="Add to Cart" 
+    onButtonClick={() => console.log('Button clicked!')} 
+    className="myCard"
+  />
+</div>
 
 
 ```jsx
 import {Card} from '@brightcodeui/beta-ui';
 
-<Card 
-  imageSrc="https://placehold.co/600x400" 
-  title="Product Name" 
-  description="This is a sample product description." 
-  price="$99.99" 
-  buttonText="Add to Cart" 
-  onButtonClick={() => console.log('Button clicked!')} 
-/>
+<div className="flex gap-10">
+  <Card 
+    imageSrc="https://placehold.co/600x400" 
+    title="Product Name" 
+    description="This is a sample product description." 
+    price="$99.99" 
+    buttonText="Add to Cart" 
+    onButtonClick={() => console.log('Button clicked!')} 
+  />
+
+    <Card 
+    imageSrc="https://placehold.co/600x400" 
+    title="Product Name" 
+    description="This is a sample product description." 
+    price="$99.99" 
+    buttonText="Add to Cart" 
+    onButtonClick={() => console.log('Button clicked!')} 
+
+  />
+<div/>
 ```
 
 ### Props

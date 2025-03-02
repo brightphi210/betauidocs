@@ -43,39 +43,97 @@ interface Token {
 
 ## Example Usage
 
-```typescript
-import TokenSwap from './TokenSwap';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { TokenSwap } from  "@brightcodeui/beta-ui";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { useState } from "react";
 
-const tokens = [
-  { symbol: 'ETH', balance: 10 },
-  { symbol: 'BTC', balance: 0.5 },
-  { symbol: 'SOL', balance: 100 }
-];
 
-const exchangeRates = {
-  'ETH_BTC': 0.05,
-  'BTC_ETH': 20,
-  'ETH_SOL': 100,
-  'SOL_ETH': 0.01,
-};
+<Tabs>
+  <TabItem value="ui" label="Example" default>
+    <BrowserOnly>
+      {() => {
+        const App = () => {
 
-const handleSwap = (fromToken: string, toToken: string, amount: number) => {
-  console.log(`Swapped ${amount} ${fromToken} to ${toToken}`);
-};
+          const tokens = [
+            { symbol: 'ETH', balance: 10 },
+            { symbol: 'BTC', balance: 0.5 },
+            { symbol: 'SOL', balance: 100 }
+          ];
 
-function App() {
-  return (
-    <TokenSwap
-      tokens={tokens}
-      exchangeRates={exchangeRates}
-      onSwap={handleSwap}
-      theme="dark"
-    />
-  );
-}
+          const exchangeRates = {
+            'ETH_BTC': 0.05,
+            'BTC_ETH': 20,
+            'ETH_SOL': 100,
+            'SOL_ETH': 0.01,
+          };
 
-export default App;
-```
+          const data = {
+            fromToken: 'ETH',
+            toToken: 'BTC',
+            amount: '2000'
+          }
+          const handleSwap = () => {
+            console.log(`Swapped ${data.amount} ${data.fromToken} to ${data.toToken}`);
+          };
+
+
+          return (
+            <TokenSwap
+              tokens={tokens}
+              exchangeRates={exchangeRates}
+              onSwap={handleSwap}
+              theme="light"
+            />
+          );
+        };
+        return <App />;
+
+      }}
+    </BrowserOnly>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+  ```tsx
+    import { TokenSwap } from '@brightcodeui/beta-ui';
+
+    const tokens = [
+      { symbol: 'ETH', balance: 10 },
+      { symbol: 'BTC', balance: 0.5 },
+      { symbol: 'SOL', balance: 100 }
+    ];
+
+    const exchangeRates = {
+      'ETH_BTC': 0.05,
+      'BTC_ETH': 20,
+      'ETH_SOL': 100,
+      'SOL_ETH': 0.01,
+    };
+
+
+
+    const handleSwap = (fromToken: string, toToken: string, amount: number) => {
+      console.log(`Swapped ${amount} ${fromToken} to ${toToken}`);
+    };
+
+    function App() {
+      return (
+        <TokenSwap
+          tokens={tokens}
+          exchangeRates={exchangeRates}
+          onSwap={handleSwap}
+          theme="light"
+        />
+      );
+    }
+
+    export default App;
+    ```
+  </TabItem>
+
+</Tabs>
+
 
 ## UI Components
 

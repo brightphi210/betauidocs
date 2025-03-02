@@ -49,11 +49,16 @@
   box-sizing: border-box;
   font-size: 15px;
   font-weight: 500;
+  /* font-family: "Lato", serif; */
 }
 
 html[data-theme='dark'] .navbar {
   background-color: #070707;
   border-bottom: solid 1px rgb(31, 31, 31);
+}
+
+body{
+  font-family: "Lato", serif;
 }
 
 
@@ -64,13 +69,11 @@ html[data-theme='dark'] .main-wrapper {
 
 h1{
   font-size: 35px !important;
-  /* font-family: "Sora", serif; */
   font-family: "Lato", serif;
 }
 
 h2{
   font-size: 20px !important;
-  /* font-family: "Sora", serif; */
   font-family: "Lato", serif;
 }
 
@@ -243,6 +246,11 @@ pre code {
   color: #000 !important;
 }
 
+.myDivCard{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 
 .myAccordin{
   background-color: white !important;
@@ -250,6 +258,13 @@ pre code {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 768px) {
+
+  .myDivCard{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
   p{
     width: 100%;
   }

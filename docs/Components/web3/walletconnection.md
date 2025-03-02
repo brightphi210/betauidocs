@@ -27,41 +27,7 @@ import React, { useState } from "react";
 
 
 <Tabs>
-  <TabItem value="code" label="Code" default>
- ```tsx
-import React, { useState } from "react";
-import {WalletConnection} from  "@brightcodeui/beta-ui";
-
-const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleConnect = async (walletType: string) => {
-    // Simulate wallet connection
-    return "0x742d35Cc6634C0532925a3b844Bc454e4438f44e";
-  };
-
-  const handleDisconnect = () => {
-    console.log("Wallet disconnected");
-  };
-
-  return (
-    <div className="p-8">
-      <Button onClick={() => setIsOpen(true)} color="blue" fontWeight="bold"  size="sm">Open Wallet Modal</Button>
-      <WalletConnection
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        onConnect={handleConnect}
-        onDisconnect={handleDisconnect}
-        theme="light"
-      />
-    </div>
-  );
-};
-
-export default App;
-```
-  </TabItem>
-  <TabItem value="ui" label="Example">
+  <TabItem value="ui" label="Example" default>
     <BrowserOnly>
       {() => {
         const App = () => {
@@ -85,6 +51,42 @@ export default App;
       }}
     </BrowserOnly>
   </TabItem>
+
+  <TabItem value="code" label="Code">
+    ```tsx
+    import React, { useState } from "react";
+    import {WalletConnection} from  "@brightcodeui/beta-ui";
+
+    const App = () => {
+      const [isOpen, setIsOpen] = useState(false);
+
+      const handleConnect = async (walletType: string) => {
+        // Simulate wallet connection
+        return "0x742d35Cc6634C0532925a3b844Bc454e4438f44e";
+      };
+
+      const handleDisconnect = () => {
+        console.log("Wallet disconnected");
+      };
+
+      return (
+        <div className="p-8">
+          <Button onClick={() => setIsOpen(true)} color="blue" fontWeight="bold"  size="sm">Open Wallet Modal</Button>
+          <WalletConnection
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            onConnect={handleConnect}
+            onDisconnect={handleDisconnect}
+            theme="light"
+          />
+        </div>
+      );
+    };
+
+    export default App;
+    ```
+  </TabItem>
+
 </Tabs>
 
 

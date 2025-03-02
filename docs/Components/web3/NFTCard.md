@@ -46,35 +46,7 @@ import {NFTCard} from '@brightcodeui/beta-ui';
 
 
 <Tabs>
-  <TabItem value="code" label="Code" default>
-        ```tsx
-            import {NFTCard} from '@brightcodeui/beta-ui';
-
-            const App = () => {
-                const handleBuyClick = () => {
-                    alert("NFT purchased!");
-                };
-
-                return (
-                    <div className="p-4">
-                    <NFTCard
-                        imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740226820/xsVxjlsDUE8ZjYAxGXPI--0--v98nx_hlam6z.jpg"
-                        title="Cosmic Perspective #42"
-                        creator="ArtisticMind"
-                        price="0.5 ETH"
-                        likes={23}
-                        theme="light"
-                        onBuyClick={handleBuyClick}
-                    />
-                    </div>
-                );
-            };
-
-            export default App;
-        ```
-  </TabItem>
-
-  <TabItem value="ui" label="Example">
+  <TabItem value="ui" label="Example" default>
     <BrowserOnly>
       {() => {
         const App = () => {
@@ -83,15 +55,27 @@ import {NFTCard} from '@brightcodeui/beta-ui';
             };
 
             return (
-                <div className="p-4">
+                <div className="myDivCard">
                     <NFTCard
                         imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740226821/Oh6V69milpY3lQJboxJ6--0--rzahe_fsepsi.jpg"
+                        title="Nature cools"
+                        creator="PrimeCreator"
+                        price="0.3 ETH"
+                        likes={24}
+                        theme="light"
+                        onBuyClick={handleBuyClick}
+                        className="w-full myCard"
+                    />
+
+                      <NFTCard
+                        imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740226820/P1gVQ0xvsQ43V1cQdOoL--0--7427x_tvfsnz.jpg"
                         title="Cosmic Perspective #42"
                         creator="ArtisticMind"
                         price="0.5 ETH"
                         likes={23}
-                        theme="light"
+                        theme="dark"
                         onBuyClick={handleBuyClick}
+                        className="w-full myCard"
                     />
                     
                 </div>
@@ -101,6 +85,46 @@ import {NFTCard} from '@brightcodeui/beta-ui';
         return <App />;
       }}
     </BrowserOnly>
+  </TabItem>
+
+  <TabItem value="code" label="Code" >
+        ```tsx
+            import {NFTCard} from '@brightcodeui/beta-ui';
+
+            const App = () => {
+                const handleBuyClick = () => {
+                    alert("NFT purchased!");
+                };
+
+                return (
+                  <div className="p-4">
+                    <NFTCard
+                        imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740226821/Oh6V69milpY3lQJboxJ6--0--rzahe_fsepsi.jpg"
+                        title="Nature cools"
+                        creator="PrimeCreator"
+                        price="0.3 ETH"
+                        likes={24}
+                        theme="light"
+                        onBuyClick={handleBuyClick}
+                        className="w-full"
+                    />
+
+                      <NFTCard
+                          imageSrc="https://res.cloudinary.com/dphb7gqus/image/upload/v1740226820/P1gVQ0xvsQ43V1cQdOoL--0--7427x_tvfsnz.jpg"
+                          title="Cosmic Perspective #42"
+                          creator="ArtisticMind"
+                          price="0.5 ETH"
+                          likes={23}
+                          theme="dark"
+                          onBuyClick={handleBuyClick}
+                          className="w-full"
+                      />
+                  </div>
+                );
+            };
+
+            export default App;
+        ```
   </TabItem>
 </Tabs>
 

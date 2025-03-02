@@ -24,7 +24,37 @@ import TabItem from '@theme/TabItem';
 
 
 <Tabs>
-  <TabItem value="code" label="Code" default>
+<TabItem value="ui" label="Example" default>
+    <BrowserOnly>
+      {() => {
+        const App = () => {
+          const [isOpen, setIsOpen] = useState(false);
+          const transactionHash = "0x1234567890abcdef";
+
+
+          const handleOpen = () => {
+            setIsOpen(true);
+          };
+
+
+          return (
+            <div >
+              <Button onClick={handleOpen} color="green" fontWeight="bold"  size="sm">View Success Modal</Button>
+              <SuccessfulTransactionModal
+                isOpen={isOpen}
+                onClose={() => setIsOpen(false)}
+                transactionHash={transactionHash}
+                theme="dark"
+              />
+            </div>
+          );
+        };
+
+        return <App />;
+      }}
+    </BrowserOnly>
+  </TabItem>
+  <TabItem value="code" label="Code" >
     ```tsx
     import React, { useState } from "react";
     import {SuccessfulTransactionModal} from "@brightcodeui/beta-ui";
@@ -56,36 +86,7 @@ import TabItem from '@theme/TabItem';
     export default App;
     ```
   </TabItem>
-  <TabItem value="ui" label="Example">
-    <BrowserOnly>
-      {() => {
-        const App = () => {
-          const [isOpen, setIsOpen] = useState(false);
-          const transactionHash = "0x1234567890abcdef";
-
-
-          const handleOpen = () => {
-            setIsOpen(true);
-          };
-
-
-          return (
-            <div >
-              <Button onClick={handleOpen} color="green" fontWeight="bold"  size="sm">View Success Modal</Button>
-              <SuccessfulTransactionModal
-                isOpen={isOpen}
-                onClose={() => setIsOpen(false)}
-                transactionHash={transactionHash}
-                theme="dark"
-              />
-            </div>
-          );
-        };
-
-        return <App />;
-      }}
-    </BrowserOnly>
-  </TabItem>
+  
 </Tabs>
 
 ## Props

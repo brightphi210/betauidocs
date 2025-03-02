@@ -18,7 +18,7 @@ The `Input` component is a flexible and customizable input field that can be use
 ## Import
 
 ```jsx
-import Input from '@brightcodeui/beta-ui';
+import { Input } from '@brightcodeui/beta-ui';
 ```
 
 ## Basic Usage

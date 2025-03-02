@@ -60,27 +60,6 @@ import {Loading} from '@brightcodeui/beta-ui';
 <Loading type="ring" size="md" />
 ```
 
-## Loader Types
-
-### Spinner
-
-The spinner loader uses the `FaSpinner` icon from `react-icons/fa` and applies a spinning animation.
-
-### Dots
-
-The dots loader creates three bouncing dots with a slight delay between each dot's animation.
-
-### Bar
-
-The bar loader displays a horizontal bar that animates from left to right.
-
-### Pulse
-
-The pulse loader shows a circle that fades in and out.
-
-### Ring
-
-The ring loader displays a circular border that spins.
 
 ## Customization
 
@@ -103,13 +82,3 @@ The `color` prop accepts Tailwind CSS color classes. For example:
 ### Additional Classes
 
 You can pass additional CSS classes using the `className` prop to further customize the appearance of the loader.
-
-## Notes
-
-- The component uses Tailwind CSS classes for styling. Make sure your project is set up with Tailwind CSS for the styles to work correctly.
-- The `FaSpinner` icon is imported from `react-icons/fa`. Ensure this package is installed in your project.
-- Custom animations (`animate-loading-bar`) are used for the bar loader. You may need to define this animation in your Tailwind CSS configuration.
-
-## Accessibility
-
-The Loading component doesn't include any specific accessibility features. When using this component, consider adding appropriate `aria-` attributes or text for screen readers to improve accessibility in your application.

@@ -20,6 +20,8 @@ The `Avatar` component is used to display user profile pictures, initials, and s
 | `className` | string | -       | Additional CSS classes for styling.       |
 
 ### Usage
+import {Avatar} from "@brightcodeui/beta-ui";
+
 
 ```jsx
 import {Avatar} from "@brightcodeui/beta-ui";
@@ -35,6 +37,8 @@ Displays a default avatar with an image.
 ```jsx
 <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="md" />
 ```
+<Avatar src="https://i.pravatar.cc/300" name="John Doe" size="md" />
+
 
 #### With Initials
 
@@ -43,6 +47,8 @@ Displays the initials of the name if no `src` is provided.
 ```jsx
 <Avatar name="John Doe" size="md" />
 ```
+<Avatar name="John Doe" size="md" />
+
 
 #### With Badge
 
@@ -51,6 +57,8 @@ Displays a badge indicating the user's status.
 ```jsx
 <Avatar src="https://i.pravatar.cc/300" name="Jane Smith" size="md" badge="online" />
 ```
+<Avatar src="https://i.pravatar.cc/300" name="Jane Smith" size="md" badge="online" />
+
 
 #### Sizes
 
@@ -65,10 +73,19 @@ Shows avatars in different sizes.
   <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="xl" />
 </div>
 ```
+<div className="flex items-end space-x-4">
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="xs" />
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="sm" />
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="md" />
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="lg" />
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="xl" />
+</div>
 
 #### Group of Avatars
 
 Displays a group of avatars.
+
+
 
 ```jsx
 <div className="flex -space-x-4">
@@ -76,9 +93,14 @@ Displays a group of avatars.
   <Avatar src="https://i.pravatar.cc/300?img=2" />
   <Avatar src="https://i.pravatar.cc/300?img=3" />
   <Avatar src="https://i.pravatar.cc/300?img=4" />
-  <Avatar name="More" className="bg-gray-200" />
 </div>
 ```
+<div className="flex -space-x-4">
+  <Avatar src="https://i.pravatar.cc/300?img=1" />
+  <Avatar src="https://i.pravatar.cc/300?img=2" />
+  <Avatar src="https://i.pravatar.cc/300?img=3" />
+  <Avatar src="https://i.pravatar.cc/300?img=4" />
+</div>
 
 #### Stacked Avatars
 
@@ -95,6 +117,15 @@ Shows stacked avatars with a summary label.
 </div>
 ```
 
+<div className="flex items-center space-x-2">
+  <div className="flex -space-x-4">
+    <Avatar src="https://i.pravatar.cc/300?img=1" />
+    <Avatar src="https://i.pravatar.cc/300?img=2" />
+    <Avatar src="https://i.pravatar.cc/300?img=3" />
+  </div>
+  <span className="text-sm font-medium text-gray-400">+3 others</span>
+</div>
+
 #### Avatar with Badges
 
 Displays avatars with different badges.
@@ -107,11 +138,25 @@ Displays avatars with different badges.
 </div>
 ```
 
+<div className="flex space-x-4">
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="md" badge="online" />
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="md" badge="offline" />
+  <Avatar src="https://i.pravatar.cc/300" name="John Doe" size="md" badge="away" />
+</div>
+
 #### Custom Style
 
 Applies custom styling to the avatar.
 
 ```jsx
+<Avatar
+  src="https://i.pravatar.cc/300"
+  name="John Doe"
+  size="md"
+  className="ring-2 ring-blue-500 ring-offset-2"
+/>
+```
+
 <Avatar
   src="https://i.pravatar.cc/300"
   name="John Doe"
