@@ -25,17 +25,69 @@ import {Toast} from '@brightcodeui/beta-ui'
 
 Example usage:
 
-```tsx
-<Toast 
-  type="success"
-  message="Your action was successful!"
-  duration={3000}
-  position="top-right"
-  theme="light"
-  isVisible={true}
-  onClose={() => console.log("Toast closed")}
-/>
-```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import {Toast, Button} from  "@brightcodeui/beta-ui";
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import React, { useState } from "react";
+
+
+
+<Tabs>
+  <TabItem value="ui" label="Example" default>
+    <BrowserOnly>
+      {() => {
+        const App = () => {
+          const [isOpen, setIsOpen] = useState(false);
+          const [isOpen1, setIsOpen1] = useState(false);
+          
+          return (
+            <div >
+              <Button onClick={() => setIsOpen(true)} color="green" fontWeight="bold"  size="sm">Success Toast</Button>
+              <Button onClick={() => setIsOpen1(true)} color="red" fontWeight="bold"  size="sm">Error Toast</Button>
+              <Toast 
+                type="success"
+                message="Your action was successful!"
+                duration={3000}
+                position="bottom-center"
+                theme="light"
+                isVisible={isOpen}
+                onClose={() => console.log("Toast closed")}
+              />
+
+              <Toast 
+                type="error"
+                message="There was an error opening the toast"
+                duration={3000}
+                position="bottom-center"
+                theme="light"
+                isVisible={isOpen1}
+                onClose={() => console.log("Toast closed")}
+              />
+            </div>
+          );
+        };
+
+        return <App />;
+      }}
+    </BrowserOnly>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    ```tsx
+      <Toast 
+        type="success"
+        message="Your action was successful!"
+        duration={3000}
+        position="top-right"
+        theme="light"
+        isVisible={true}
+        onClose={() => console.log("Toast closed")}
+      />
+    ```
+  </TabItem>
+
+</Tabs>
 
 ### Props
 
