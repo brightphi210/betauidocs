@@ -40,19 +40,31 @@ import React, { useState } from "react";
         const App = () => {
           const [isOpen, setIsOpen] = useState(false);
           const [isOpen1, setIsOpen1] = useState(false);
+          const [isOpen2, setIsOpen2] = useState(false);
+          const [isOpen3, setIsOpen3] = useState(false);
+          const [isOpen4, setIsOpen4] = useState(false);
+          const [isOpen5, setIsOpen5] = useState(false);
           
           return (
-            <div >
-              <Button onClick={() => setIsOpen(true)} color="green" fontWeight="bold"  size="sm">Success Toast</Button>
-              <Button onClick={() => setIsOpen1(true)} color="red" fontWeight="bold"  size="sm">Error Toast</Button>
+            <div>
+              <div className="myBTNs">
+                <Button onClick={() => setIsOpen(!isOpen)} color="green" fontWeight="bold"  size="sm">Success Toast</Button>
+                <Button onClick={() => setIsOpen1(!isOpen1)} color="red" fontWeight="bold"  size="sm">Error Toast</Button>
+                <Button onClick={() => setIsOpen2(!isOpen2)} color="blue" fontWeight="bold"  size="sm">Info Toast</Button>
+                <Button onClick={() => setIsOpen3(!isOpen3)} color="yellow" fontWeight="bold"  size="sm">Warning Toast</Button>
+                <Button onClick={() => setIsOpen4(!isOpen4)} color="black" fontWeight="bold"  size="sm">Custom</Button>
+                <Button onClick={() => setIsOpen5(!isOpen5)} color="white" fontWeight="bold"  size="sm">Loading</Button>
+              </div>
+
               <Toast 
                 type="success"
                 message="Your action was successful!"
                 duration={3000}
-                position="bottom-center"
+                position="bottom-right"
                 theme="light"
                 isVisible={isOpen}
                 onClose={() => console.log("Toast closed")}
+                className="myToast"
               />
 
               <Toast 
@@ -63,6 +75,51 @@ import React, { useState } from "react";
                 theme="light"
                 isVisible={isOpen1}
                 onClose={() => console.log("Toast closed")}
+                className="myToast"
+              />
+
+              <Toast 
+                type="info"
+                message="This is an info message"
+                duration={3000}
+                position="top-center"
+                theme="light"
+                isVisible={isOpen2}
+                onClose={() => console.log("Toast closed")}
+                className="myToast"
+              />
+
+              <Toast 
+                type="warning"
+                message="This is an Warning message"
+                duration={3000}
+                position="top-center"
+                theme="dark"
+                isVisible={isOpen3}
+                onClose={() => console.log("Toast closed")}
+                className="myToast"
+              />
+
+              <Toast 
+                type="custom"
+                message="Your Rocket is ready to launch"
+                duration={3000}
+                position="top-left"
+                theme="dark"
+                isVisible={isOpen4}
+                onClose={() => console.log("Toast closed")}
+                className="myToast"
+              />
+
+              <Toast 
+                type="loading"
+                message="Processing your approval"
+                duration={3000}
+                position="top-right"
+                theme="dark"
+                isVisible={isOpen5}
+                onClose={() => console.log("Toast closed")}
+                className="myToast"
               />
             </div>
           );
@@ -82,6 +139,36 @@ import React, { useState } from "react";
         position="top-right"
         theme="light"
         isVisible={true}
+        onClose={() => console.log("Toast closed")}
+      />
+
+      <Toast 
+        type="error"
+        message="There was an error opening the toast"
+        duration={3000}
+        position="bottom-center"
+        theme="light"
+        isVisible={isOpen1}
+        onClose={() => console.log("Toast closed")}
+      />
+
+      <Toast 
+        type="info"
+        message="This is an info message"
+        duration={3000}
+        position="top-center"
+        theme="light"
+        isVisible={isOpen2}
+        onClose={() => console.log("Toast closed")}
+      />
+
+      <Toast 
+        type="warning"
+        message="This is an Warning message"
+        duration={3000}
+        position="top-center"
+        theme="dark"
+        isVisible={isOpen3}
         onClose={() => console.log("Toast closed")}
       />
     ```

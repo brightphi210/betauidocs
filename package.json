@@ -15,7 +15,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@brightcodeui/beta-ui": "^0.0.10",
+    "@brightcodeui/beta-ui": "^0.0.13",
     "@docusaurus/core": "3.7.0",
     "@docusaurus/plugin-client-redirects": "^3.7.0",
     "@docusaurus/preset-classic": "3.7.0",
