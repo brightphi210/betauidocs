@@ -15,6 +15,17 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Syne:wght@400..800&display=swap');
 
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-weight: 500;
+  /* font-family: "Lato", serif; */
+}
+
+
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -26,8 +37,30 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Target the sidebar menu items */
+.menu__link {
+  font-size: 13px;
+  padding-bottom: 10px;
+  font-family: "IBM Plex Mono", serif;
 
 }
+
+.menu__link--sublist {
+  font-size: 13px; 
+  padding-bottom: 10px;
+  font-family: "IBM Plex Mono", serif;
+}
+
+
+code {
+  color: #05a08b;
+  padding: 0.2em 0.4em;
+  border-radius: 5px;
+}
+
 
 
 [data-theme='dark'] {
@@ -42,19 +75,20 @@
 
 }
 
-
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-size: 15px;
-  font-weight: 500;
-  /* font-family: "Lato", serif; */
+/* Target code blocks for specific languages */
+.language-jsx code,
+.language-tsx code,
+.language-javascript code,
+.language-typescript code {
+  font-size: 6px; /* Adjust this value as needed */
 }
+
+
+
 
 html[data-theme='dark'] .navbar {
   background-color: #070707;
-  border-bottom: solid 1px rgb(31, 31, 31);
+  border-bottom: solid 1px rgb(1, 34, 31);
 }
 
 body{
@@ -68,12 +102,12 @@ html[data-theme='dark'] .main-wrapper {
 
 
 h1{
-  font-size: 35px !important;
+  font-size: 30px !important;
   font-family: "Lato", serif;
 }
 
 h2{
-  font-size: 20px !important;
+  font-size: 16px !important;
   font-family: "Lato", serif;
 }
 
@@ -95,22 +129,24 @@ p{
 
 html[data-theme='dark'] {
   --code-text-color: #ffffff;
-  --code-block-background: #1b1b1d;
+  --code-block-background: #000807;
   --code-block-border: solid 1px rgb(35, 44, 40);
 }
 
 
 pre {
   border-radius: 8px;
-  padding: 16px;
+  padding: 13px;
   border: var(--code-block-border);
   font-family: "IBM Plex Mono", serif;
   background-color: var(--code-block-background) !important;
+  font-size: 12px !important;
 }
 
 
 pre code {
   font-family: "IBM Plex Mono", serif;
+  font-size: 12px !important;
 }
 
 
@@ -169,7 +205,7 @@ pre code {
   text-decoration: none !important;
   margin: 0 5px !important;
   border: none !important;
-  font-size: 15px !important;
+  font-size: 13px !important;
 }
 
 .headerMine .buttona {
@@ -180,7 +216,7 @@ pre code {
   padding: 15px 20px !important;
   text-decoration: none !important;
   margin: 0 5px !important;
-  font-size: 15px !important;
+  font-size: 13px !important;
   text-align: center !important;
 }
 
@@ -230,7 +266,7 @@ pre code {
 }
 
 .mySelecta{
-  font-size: 35px !important;
+  font-size: 30px !important;
 }
 
 
@@ -307,4 +343,16 @@ pre code {
   .myForm{
     width: 100% !important;
   }
+}
+
+.progressDiv{
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  margin-top: 20px !important;
+  width: 40% !important;
+}
+
+.chats{
+  width: 100% !important;
 }

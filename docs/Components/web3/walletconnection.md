@@ -3,7 +3,7 @@ sidebar_position: 4
 sidebar_label: Wallet Connection
 ---
 
-## WalletConnection
+## Wallet Connection
 
 The `WalletConnection` component provides a modal for users to connect their cryptocurrency wallets using MetaMask, WalletConnect, or Coinbase Wallet. It supports theme customization and displays the connected wallet address.
 
