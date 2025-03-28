@@ -1,10 +1,3 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 
 @tailwind base;
 @tailwind components;
@@ -20,9 +13,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 15px;
   font-weight: 500;
-  /* font-family: "Lato", serif; */
 }
 
 
@@ -31,7 +22,6 @@
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
-  /* --ifm-color-primary-darkest: #011108; */
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
@@ -39,8 +29,12 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+body{
+  font-family: "Lato", serif;
+}
 
-/* Target the sidebar menu items */
+
+
 .menu__link {
   font-size: 13px;
   padding-bottom: 10px;
@@ -56,7 +50,7 @@
 
 
 code {
-  color: #05a08b;
+  color: #05a08b !important;
   padding: 0.2em 0.4em;
   border-radius: 5px;
 }
@@ -72,33 +66,32 @@ code {
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
 }
-
-/* Target code blocks for specific languages */
-.language-jsx code,
-.language-tsx code,
-.language-javascript code,
-.language-typescript code {
-  font-size: 6px; /* Adjust this value as needed */
-}
-
-
-
 
 html[data-theme='dark'] .navbar {
   background-color: #070707;
   border-bottom: solid 1px rgb(1, 34, 31);
 }
 
-body{
-  font-family: "Lato", serif;
-}
 
 
 html[data-theme='dark'] .main-wrapper {
   background-color: #000000;
 }
+
+html[data-theme='dark'] {
+  --code-text-color: #ffffff;
+  --code-block-background: #000807;
+  --code-block-border: solid 1px rgb(35, 44, 40);
+}
+
+html[data-theme='light'] {
+  --code-text-color: #ffffff;
+  --code-block-background: #000807;
+  --code-block-border: solid 1px rgb(35, 44, 40);
+}
+
+
 
 
 h1{
@@ -114,40 +107,133 @@ h2{
 
 
 p{
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 400;
   width: 80%;
   text-align: justify;
   line-height: 25px;
-  /* font-family: "Sora", serif; */
   font-family: "Lato", serif;
-
 }
 
+/* ============= START CODE BLOCK STYLES ================== */
 
-
-
-html[data-theme='dark'] {
-  --code-text-color: #ffffff;
-  --code-block-background: #000807;
-  --code-block-border: solid 1px rgb(35, 44, 40);
-}
-
-
-pre {
+html[data-theme='light'] pre{
+  background-color: var(--code-block-background) !important;
+  color: var(--code-text-color);
   border-radius: 8px;
   padding: 13px;
   border: var(--code-block-border);
   font-family: "IBM Plex Mono", serif;
+  font-size: 14px;
+}
+
+html[data-theme='dark'] pre{
   background-color: var(--code-block-background) !important;
-  font-size: 12px !important;
+  color: var(--code-text-color);
+  border-radius: 8px;
+  padding: 13px;
+  border: var(--code-block-border);
+  font-family: "IBM Plex Mono", serif;
+  font-size: 14px;
 }
 
 
 pre code {
   font-family: "IBM Plex Mono", serif;
-  font-size: 12px !important;
+  background-color: transparent !important;
 }
+
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #a3e9d8 !important;
+}
+
+.token.punctuation {
+  color: #e0e0e0 !important;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol {
+  color: white !important;
+
+}
+
+.token.deleted {
+  color: #ff8c8c !important;
+}
+
+.token.boolean,
+.token.number {
+  color: #b3ffb3 !important;
+
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #b3ffb3 !important;
+
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #f5f5f5 !important;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #aef1fc !important;
+}
+
+.token.function,
+.token.class-name {
+  color: #ffd780 !important;
+
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #ff8a80 !important;
+}
+
+/* pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+} */
+
+/* ============= END OF CODE BLOCK ============= */
+
 
 
 .myBtn{
