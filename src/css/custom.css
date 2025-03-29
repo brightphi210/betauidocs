@@ -91,9 +91,6 @@ html[data-theme='light'] {
   --code-block-border: solid 1px rgb(35, 44, 40);
 }
 
-
-
-
 h1{
   font-size: 30px !important;
   font-family: "Lato", serif;
@@ -114,6 +111,7 @@ p{
   line-height: 25px;
   font-family: "Lato", serif;
 }
+
 
 /* ============= START CODE BLOCK STYLES ================== */
 
@@ -157,6 +155,11 @@ pre code {
 
 .token.namespace {
   opacity: 0.7;
+}
+
+.token,
+.language-sh .token {
+  color: white !important;
 }
 
 .token.property,
@@ -213,24 +216,7 @@ pre code {
   color: #ff8a80 !important;
 }
 
-/* pre::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
 
-pre::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-pre::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-}
-
-pre::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.5);
-} */
 
 /* ============= END OF CODE BLOCK ============= */
 

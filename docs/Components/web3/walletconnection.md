@@ -15,8 +15,6 @@ Ensure you have the necessary dependencies installed:
   npm i @brightcodeui/beta-ui
 ```
 
-### Usage
-
 #### Basic Example
 
 import Tabs from '@theme/Tabs';

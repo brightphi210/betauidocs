@@ -23,6 +23,11 @@ The `WalletModal` component is a modal window that displays a user's wallet deta
 - **Disconnect Wallet**: Allows users to disconnect their wallet from the application.
 - **Smooth Animations**: Modal appears and disappears with transition effects.
 
+## Installation
+```bash
+    npm install @brightcodeui/beta-ui
+```
+
 ## Basic Example
 
 
@@ -31,6 +36,7 @@ import TabItem from '@theme/TabItem';
 import {WalletDisplayModal, Button} from  "@brightcodeui/beta-ui";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import React, { useState } from "react";
+
 
 <Tabs>
   <TabItem value="ui" label="Example" default>
@@ -46,11 +52,12 @@ import React, { useState } from "react";
                     isOpen={isModalOpen}
                     onClose={() => setModalOpen(false)}
                     address="0x123...abcd"
-                    balance="2.5"
-                    currency="ETH"
-                    onCopy={() => alert('Address copied!')}
-                    onDisconnect={() => alert('Wallet disconnected!')}
-                    avatarUrl="https://example.com/avatar.png"
+                    balance='0.500'
+                    currency='Eth'
+                    avatarUrl="https://res.cloudinary.com/dphb7gqus/image/upload/v1707762135/media/profile_pics/a1_k3kjtp.jpg"
+                    onDisconnect={() => alert('Its Disconnected')}
+                    onCopy={()=>alert('Its Copy')}
+                    className="myP"
                 />
             </div>
           );
@@ -64,24 +71,23 @@ import React, { useState } from "react";
   <TabItem value="code" label="Code">
     ```tsx
     import React, { useState } from "react";
-    import {WalletDisplayModal, Button} from '@brightcodeui/beta-ui';
+    import {WalletConnection} from  "@brightcodeui/beta-ui";
 
     const App = () => {
       const [isModalOpen, setModalOpen] = useState(false);
 
       return (
-         <div>
-            <Button color="blue" onClick={() => setModalOpen(true)}>Open Wallet</Button>
-            <WalletModal
-                isOpen={isModalOpen}
-                onClose={() => setModalOpen(false)}
-                address="0x123...abcd"
-                balance="2.5"
-                currency="ETH"
-                onCopy={() => alert('Address copied!')}
-                onDisconnect={() => alert('Wallet disconnected!')}
-                avatarUrl="https://example.com/avatar.png"
-            />
+        <div className="p-8">
+          <Button onClick={() => setIsOpen(true)} color="blue" fontWeight="bold"  size="sm">Open Wallet Modal</Button>
+          <WalletConnection
+            isOpen={isOpen}
+            address="0x123...abcd"
+            onClose={() => setIsOpen(false)}
+            onConnect={handleConnect}
+            onDisconnect={handleDisconnect}
+            theme="light"
+            avatarUrl="https://res.cloudinary.com/dphb7gqus/image/upload/v1707762135/media/profile_pics/a1_k3kjtp.jpg"
+          />
         </div>
       );
     };
@@ -93,17 +99,10 @@ import React, { useState } from "react";
 </Tabs>
 
 
-
 ## Methods & Event Handlers
-- `onClose()`: Closes the modal.
-- `onCopy()`: Copies the wallet address to the clipboard.
-- `onDisconnect()`: Handles wallet disconnection.
-
-## UI Design
-- The modal appears in the center of the screen.
-- A semi-transparent black background is applied when open.
-- Buttons have a rounded design with hover effects.
-- The modal scales and fades in/out on open/close.
+- `onClose() ` :  Closes the modal.
+- `onCopy() ` :  Copies the wallet address to the clipboard.
+- `onDisconnect() ` :  Handles wallet disconnection.
 
 
 ## Notes
