@@ -8,12 +8,6 @@ The Rating component provides an interactive star rating system that allows user
 import Rating from "@brightcodeui/beta-ui";
 ```
 
-## Usage
-
-```
-typescriptreact project="rating-docs"
-```
-
 ## Props
 
 | Prop | Type | Default | Description
@@ -26,8 +20,6 @@ typescriptreact project="rating-docs"
 | `onChange` | `(value: number) => void` | `undefined` | Callback function called when the rating changes
 | `className` | `string` | `undefined` | Additional CSS class names
 
-
-## Examples
 
 ### Basic Usage
 
